@@ -1,0 +1,3 @@
+ churned  count
+       0    475
+       1    290

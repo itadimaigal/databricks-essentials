@@ -1,0 +1,3 @@
+              model  test_auc  test_precision  test_recall
+logistic_regression     0.725            0.58         0.58
+      random_forest     0.772            0.60         0.68

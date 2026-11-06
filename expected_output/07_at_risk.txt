@@ -1,0 +1,6 @@
+ customer_id  recency_days  orders  spend_yen  churn_risk first_name     city
+        1340            76       5      43260       0.875     Nanami Yokohama
+        1370            62       5      35240       0.870        Mei   Sendai
+        1301            53       7      49000       0.865     Haruto   Nagoya
+        1390            48      10      51870       0.849      Akari    Osaka
+        1179            45      11      44840       0.845      Daiki    Tokyo

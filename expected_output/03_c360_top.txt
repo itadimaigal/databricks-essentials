@@ -1,0 +1,6 @@
+ customer_id  orders  lifetime_value_yen first_order last_order favourite_category     city segment
+        1275      60              706830  2026-01-05 2026-06-30               Home Yokohama Premium
+        1331      47              700770  2026-01-02 2026-06-22               Home    Tokyo Premium
+        1566      52              631680  2026-01-01 2026-06-27               Home Yokohama Premium
+        1020      34              586140  2026-01-06 2026-06-25        Electronics    Kyoto Premium
+        1256      43              577880  2026-01-04 2026-06-30               Home    Kyoto Premium

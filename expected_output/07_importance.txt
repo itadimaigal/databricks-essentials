@@ -1,0 +1,9 @@
+        feature  importance
+   recency_days       0.303
+orders_last_30d       0.206
+      spend_yen       0.121
+    tenure_days       0.115
+         orders       0.103
+      app_share       0.088
+     categories       0.045
+     is_premium       0.018

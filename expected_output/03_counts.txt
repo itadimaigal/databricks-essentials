@@ -1,0 +1,6 @@
+            table_name  row_count
+         bronze_orders       9032
+         silver_orders       8995
+    bronze_order_items      17915
+    silver_order_items      17901
+quarantine_order_items         14

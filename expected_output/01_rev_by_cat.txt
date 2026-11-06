@@ -1,0 +1,7 @@
+   category  revenue_yen  orders
+    Kitchen     30087580    2462
+Electronics     24695900    2338
+       Home     23262200    2543
+     Beauty      7044600    2534
+     Snacks      2532220    2144
+     Drinks      2318080    2393

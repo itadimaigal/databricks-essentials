@@ -1,0 +1,13 @@
+EXAMPLE OUTPUT ONLY: AI Functions call a language model, so labels and wording can differ between runs and models.
+
+ticket_id  sentiment  category
+1          negative   damaged or wrong item
+2          positive   praise
+3          negative   billing
+4          negative   delivery
+5          negative   product defect
+6          neutral    order change
+7          positive   praise
+8          negative   app or account
+9          negative   damaged or wrong item
+10         neutral    question

@@ -1,0 +1,5 @@
+ version                         operation                                    operationMetrics
+       3                            DELETE                                 numDeletedRows: 115
+       2                             MERGE numTargetRowsUpdated: 50, numTargetRowsInserted: 20
+       1                            UPDATE                                   numUpdatedRows: 1
+       0 CREATE OR REPLACE TABLE AS SELECT                                 numOutputRows: 8995

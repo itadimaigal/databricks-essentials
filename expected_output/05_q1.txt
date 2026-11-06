@@ -1,0 +1,6 @@
+     product_name    category  units  revenue_yen
+Rice Cooker 3-cup     Kitchen    873     11174400
+ Wireless Earbuds Electronics    920      9016000
+       Tatami Mat        Home    923      7014800
+    Santoku Knife     Kitchen    936      6364800
+       Donabe Pot     Kitchen    915      5124000

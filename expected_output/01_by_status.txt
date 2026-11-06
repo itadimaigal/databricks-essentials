@@ -1,0 +1,4 @@
+   status  orders
+completed    8130
+cancelled     540
+ returned     362

@@ -1,0 +1,6 @@
+ order_id  customer_id            order_ts    status channel
+   500686         1071 2026-01-01 07:02:22 completed     web
+   508888         1795 2026-01-01 07:17:54 completed     app
+   508791         1790 2026-01-01 07:30:27 completed     web
+   503446         1300 2026-01-01 07:38:34 completed     web
+   505594         1490 2026-01-01 07:46:49 completed     web

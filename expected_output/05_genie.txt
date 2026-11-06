@@ -1,0 +1,4 @@
+   city  q1_m_yen  q2_m_yen  growth_pct
+  Kyoto      3.81      2.42       -36.6
+Sapporo      3.32      2.09       -37.2
+  Osaka      7.37      4.42       -40.0

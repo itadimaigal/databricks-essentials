@@ -1,0 +1,3 @@
+channel  orders  avg_hour  cancelled
+    app    4930      14.4        295
+    web    4102      14.5        245

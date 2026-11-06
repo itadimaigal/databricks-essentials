@@ -1,0 +1,5 @@
+ customer_id first_name            email     city
+        1001      Akari ak***@example.jp Yokohama
+        1002      Akari ak***@example.jp  Fukuoka
+        1003     Takumi ta***@example.jp  Fukuoka
+        1004        Yui yu***@example.jp    Kyoto

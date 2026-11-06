@@ -1,0 +1,761 @@
+{
+ "01_rows": 9032,
+ "01_head": {
+  "cols": [
+   "order_id",
+   "customer_id",
+   "order_ts",
+   "status",
+   "channel"
+  ],
+  "rows": [
+   [
+    500686,
+    1071,
+    "2026-01-01 07:02:22",
+    "completed",
+    "web"
+   ],
+   [
+    508888,
+    1795,
+    "2026-01-01 07:17:54",
+    "completed",
+    "app"
+   ],
+   [
+    508791,
+    1790,
+    "2026-01-01 07:30:27",
+    "completed",
+    "web"
+   ],
+   [
+    503446,
+    1300,
+    "2026-01-01 07:38:34",
+    "completed",
+    "web"
+   ],
+   [
+    505594,
+    1490,
+    "2026-01-01 07:46:49",
+    "completed",
+    "web"
+   ]
+  ]
+ },
+ "01_by_status": {
+  "cols": [
+   "status",
+   "orders"
+  ],
+  "rows": [
+   [
+    "completed",
+    8130
+   ],
+   [
+    "cancelled",
+    540
+   ],
+   [
+    "returned",
+    362
+   ]
+  ]
+ },
+ "01_rev_by_cat": {
+  "cols": [
+   "category",
+   "revenue_yen",
+   "orders"
+  ],
+  "rows": [
+   [
+    "Kitchen",
+    30087580,
+    2462
+   ],
+   [
+    "Electronics",
+    24695900,
+    2338
+   ],
+   [
+    "Home",
+    23262200,
+    2543
+   ],
+   [
+    "Beauty",
+    7044600,
+    2534
+   ],
+   [
+    "Snacks",
+    2532220,
+    2144
+   ],
+   [
+    "Drinks",
+    2318080,
+    2393
+   ]
+  ]
+ },
+ "01_by_channel": {
+  "cols": [
+   "channel",
+   "orders",
+   "avg_hour",
+   "cancelled"
+  ],
+  "rows": [
+   [
+    "app",
+    4930,
+    14.4,
+    295
+   ],
+   [
+    "web",
+    4102,
+    14.5,
+    245
+   ]
+  ]
+ },
+ "01_dupes": 37,
+ "02_v0_rows": 8995,
+ "02_merge": {
+  "updated": 50,
+  "inserted": 20
+ },
+ "02_history": {
+  "cols": [
+   "version",
+   "operation",
+   "operationMetrics"
+  ],
+  "rows": [
+   [
+    3,
+    "DELETE",
+    "numDeletedRows: 115"
+   ],
+   [
+    2,
+    "MERGE",
+    "numTargetRowsUpdated: 50, numTargetRowsInserted: 20"
+   ],
+   [
+    1,
+    "UPDATE",
+    "numUpdatedRows: 1"
+   ],
+   [
+    0,
+    "CREATE OR REPLACE TABLE AS SELECT",
+    "numOutputRows: 8995"
+   ]
+  ]
+ },
+ "02_timetravel": {
+  "cols": [
+   "version",
+   "orders",
+   "returned"
+  ],
+  "rows": [
+   [
+    "v0",
+    8995,
+    360
+   ],
+   [
+    "now",
+    8900,
+    410
+   ]
+  ]
+ },
+ "03_counts": {
+  "cols": [
+   "table_name",
+   "row_count"
+  ],
+  "rows": [
+   [
+    "bronze_orders",
+    9032
+   ],
+   [
+    "silver_orders",
+    8995
+   ],
+   [
+    "bronze_order_items",
+    17915
+   ],
+   [
+    "silver_order_items",
+    17901
+   ],
+   [
+    "quarantine_order_items",
+    14
+   ]
+  ]
+ },
+ "03_gold_daily_rows": 1086,
+ "03_c360_rows": 770,
+ "03_c360_top": {
+  "cols": [
+   "customer_id",
+   "orders",
+   "lifetime_value_yen",
+   "first_order",
+   "last_order",
+   "favourite_category",
+   "city",
+   "segment"
+  ],
+  "rows": [
+   [
+    1275,
+    60,
+    706830,
+    "2026-01-05",
+    "2026-06-30",
+    "Home",
+    "Yokohama",
+    "Premium"
+   ],
+   [
+    1331,
+    47,
+    700770,
+    "2026-01-02",
+    "2026-06-22",
+    "Home",
+    "Tokyo",
+    "Premium"
+   ],
+   [
+    1566,
+    52,
+    631680,
+    "2026-01-01",
+    "2026-06-27",
+    "Home",
+    "Yokohama",
+    "Premium"
+   ],
+   [
+    1020,
+    34,
+    586140,
+    "2026-01-06",
+    "2026-06-25",
+    "Electronics",
+    "Kyoto",
+    "Premium"
+   ],
+   [
+    1256,
+    43,
+    577880,
+    "2026-01-04",
+    "2026-06-30",
+    "Home",
+    "Kyoto",
+    "Premium"
+   ]
+  ]
+ },
+ "04_batch1": 3900,
+ "04_batch2": 1950,
+ "04_funnel": {
+  "cols": [
+   "day",
+   "views",
+   "carts",
+   "purchases",
+   "conversion_pct"
+  ],
+  "rows": [
+   [
+    "2026-07-01",
+    1381,
+    304,
+    115,
+    8.3
+   ],
+   [
+    "2026-07-02",
+    1640,
+    350,
+    110,
+    6.7
+   ],
+   [
+    "2026-07-03",
+    1542,
+    294,
+    114,
+    7.4
+   ]
+  ]
+ },
+ "04_dropped_no_customer": 83,
+ "04_silver_rows": 5767,
+ "05_q1": {
+  "cols": [
+   "product_name",
+   "category",
+   "units",
+   "revenue_yen"
+  ],
+  "rows": [
+   [
+    "Rice Cooker 3-cup",
+    "Kitchen",
+    873,
+    11174400
+   ],
+   [
+    "Wireless Earbuds",
+    "Electronics",
+    920,
+    9016000
+   ],
+   [
+    "Tatami Mat",
+    "Home",
+    923,
+    7014800
+   ],
+   [
+    "Santoku Knife",
+    "Kitchen",
+    936,
+    6364800
+   ],
+   [
+    "Donabe Pot",
+    "Kitchen",
+    915,
+    5124000
+   ]
+  ]
+ },
+ "05_q2": {
+  "cols": [
+   "month",
+   "revenue_yen",
+   "mom_growth_pct"
+  ],
+  "rows": [
+   [
+    "2026-01",
+    17305380,
+    null
+   ],
+   [
+    "2026-02",
+    17652240,
+    2.0
+   ],
+   [
+    "2026-03",
+    17069220,
+    -3.3
+   ],
+   [
+    "2026-04",
+    11810850,
+    -30.8
+   ],
+   [
+    "2026-05",
+    8241520,
+    -30.2
+   ],
+   [
+    "2026-06",
+    9141190,
+    10.9
+   ]
+  ]
+ },
+ "05_q3": {
+  "cols": [
+   "city",
+   "app_m_yen",
+   "web_m_yen",
+   "total_m_yen"
+  ],
+  "rows": [
+   [
+    "Tokyo",
+    15.85,
+    12.45,
+    28.3
+   ],
+   [
+    "Osaka",
+    6.6,
+    5.19,
+    11.79
+   ],
+   [
+    "Yokohama",
+    6.01,
+    5.59,
+    11.6
+   ],
+   [
+    "Nagoya",
+    4.4,
+    4.18,
+    8.57
+   ],
+   [
+    "Kyoto",
+    3.51,
+    2.71,
+    6.22
+   ],
+   [
+    "Fukuoka",
+    3.26,
+    2.77,
+    6.03
+   ],
+   [
+    "Sapporo",
+    3.05,
+    2.36,
+    5.41
+   ],
+   [
+    "Sendai",
+    1.67,
+    1.62,
+    3.29
+   ]
+  ]
+ },
+ "05_q4": {
+  "cols": [
+   "cohort",
+   "customers",
+   "m1_pct",
+   "m2_pct",
+   "m3_pct"
+  ],
+  "rows": [
+   [
+    "2026-01",
+    605,
+    81.0,
+    81.0,
+    66.0
+   ],
+   [
+    "2026-02",
+    114,
+    64.0,
+    51.0,
+    35.0
+   ],
+   [
+    "2026-03",
+    37,
+    54.0,
+    30.0,
+    32.0
+   ],
+   [
+    "2026-04",
+    9,
+    22.0,
+    33.0,
+    0.0
+   ],
+   [
+    "2026-05",
+    3,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    "2026-06",
+    2,
+    0.0,
+    0.0,
+    0.0
+   ]
+  ]
+ },
+ "05_q5": {
+  "cols": [
+   "segment",
+   "customers",
+   "avg_value_yen",
+   "avg_recency_days"
+  ],
+  "rows": [
+   [
+    "Champions",
+    151,
+    204791.0,
+    3.0
+   ],
+   [
+    "Loyal",
+    201,
+    126469.0,
+    13.0
+   ],
+   [
+    "At risk",
+    104,
+    125579.0,
+    72.0
+   ],
+   [
+    "Needs attention",
+    154,
+    39896.0,
+    50.0
+   ],
+   [
+    "Hibernating",
+    160,
+    35453.0,
+    116.0
+   ]
+  ]
+ },
+ "05_genie": {
+  "cols": [
+   "city",
+   "q1_m_yen",
+   "q2_m_yen",
+   "growth_pct"
+  ],
+  "rows": [
+   [
+    "Kyoto",
+    3.81,
+    2.42,
+    -36.6
+   ],
+   [
+    "Sapporo",
+    3.32,
+    2.09,
+    -37.2
+   ],
+   [
+    "Osaka",
+    7.37,
+    4.42,
+    -40.0
+   ]
+  ]
+ },
+ "05_kpis": {
+  "revenue_m_yen": 81.2,
+  "completed_orders": 8098,
+  "active_customers": 770,
+  "avg_order_value_yen": 10030
+ },
+ "06_masked": {
+  "cols": [
+   "customer_id",
+   "first_name",
+   "email",
+   "city"
+  ],
+  "rows": [
+   [
+    1001,
+    "Akari",
+    "ak***@example.jp",
+    "Yokohama"
+   ],
+   [
+    1002,
+    "Akari",
+    "ak***@example.jp",
+    "Fukuoka"
+   ],
+   [
+    1003,
+    "Takumi",
+    "ta***@example.jp",
+    "Fukuoka"
+   ],
+   [
+    1004,
+    "Yui",
+    "yu***@example.jp",
+    "Kyoto"
+   ]
+  ]
+ },
+ "07_label_counts": {
+  "cols": [
+   "churned",
+   "count"
+  ],
+  "rows": [
+   [
+    0,
+    475
+   ],
+   [
+    1,
+    290
+   ]
+  ]
+ },
+ "07_metrics": {
+  "cols": [
+   "model",
+   "test_auc",
+   "test_precision",
+   "test_recall"
+  ],
+  "rows": [
+   [
+    "logistic_regression",
+    0.725,
+    0.58,
+    0.58
+   ],
+   [
+    "random_forest",
+    0.772,
+    0.6,
+    0.68
+   ]
+  ]
+ },
+ "07_best": "random_forest",
+ "07_importance": {
+  "cols": [
+   "feature",
+   "importance"
+  ],
+  "rows": [
+   [
+    "recency_days",
+    0.303
+   ],
+   [
+    "orders_last_30d",
+    0.206
+   ],
+   [
+    "spend_yen",
+    0.121
+   ],
+   [
+    "tenure_days",
+    0.115
+   ],
+   [
+    "orders",
+    0.103
+   ],
+   [
+    "app_share",
+    0.088
+   ],
+   [
+    "categories",
+    0.045
+   ],
+   [
+    "is_premium",
+    0.018
+   ]
+  ]
+ },
+ "07_at_risk": {
+  "cols": [
+   "customer_id",
+   "recency_days",
+   "orders",
+   "spend_yen",
+   "churn_risk",
+   "first_name",
+   "city"
+  ],
+  "rows": [
+   [
+    1340,
+    76,
+    5,
+    43260,
+    0.875,
+    "Nanami",
+    "Yokohama"
+   ],
+   [
+    1370,
+    62,
+    5,
+    35240,
+    0.87,
+    "Mei",
+    "Sendai"
+   ],
+   [
+    1301,
+    53,
+    7,
+    49000,
+    0.865,
+    "Haruto",
+    "Nagoya"
+   ],
+   [
+    1390,
+    48,
+    10,
+    51870,
+    0.849,
+    "Akari",
+    "Osaka"
+   ],
+   [
+    1179,
+    45,
+    11,
+    44840,
+    0.845,
+    "Daiki",
+    "Tokyo"
+   ]
+  ]
+ },
+ "07_n_customers": 765,
+ "07_req": {
+  "recency_days": 76,
+  "orders": 5,
+  "spend_yen": 43260,
+  "categories": 4,
+  "app_share": 0.6666666666666666,
+  "orders_last_30d": 0,
+  "tenure_days": 182,
+  "is_premium": 0
+ },
+ "07_req_pred": 1
+}

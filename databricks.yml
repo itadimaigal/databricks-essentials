@@ -1,0 +1,49 @@
+# Declarative Automation Bundle (formerly Databricks Asset Bundles): the whole project as code.
+#   databricks auth login --host https://<your-workspace-url>
+#   databricks bundle validate
+#   databricks bundle deploy            # creates the job and the pipeline in your workspace
+#   databricks bundle run sakura_daily  # runs the job now
+bundle:
+  name: sakura-mart
+
+resources:
+  pipelines:
+    sakura_events:
+      name: sakura-events
+      catalog: workspace
+      schema: sakura
+      serverless: true
+      libraries:
+        - file:
+            path: ./pipelines/sakura_events.sql
+
+  jobs:
+    sakura_daily:
+      name: sakura-daily
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"   # every day at 06:00
+        timezone_id: Asia/Tokyo
+      email_notifications:
+        on_failure: [you@example.com]
+      tasks:
+        - task_key: medallion
+          notebook_task:
+            notebook_path: ./notebooks/03_medallion_pipeline.py
+        - task_key: clickstream
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.sakura_events.id}
+        - task_key: churn_scores
+          depends_on:
+            - task_key: medallion
+          notebook_task:
+            notebook_path: ./notebooks/07_ml_churn_mlflow.py
+        - task_key: ai_tickets
+          depends_on:
+            - task_key: medallion
+          notebook_task:
+            notebook_path: ./notebooks/08_ai_functions.sql
+
+targets:
+  dev:
+    mode: development
+    default: true

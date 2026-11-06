@@ -1,0 +1,6 @@
+        segment  customers  avg_value_yen  avg_recency_days
+      Champions        151       204791.0               3.0
+          Loyal        201       126469.0              13.0
+        At risk        104       125579.0              72.0
+Needs attention        154        39896.0              50.0
+    Hibernating        160        35453.0             116.0
